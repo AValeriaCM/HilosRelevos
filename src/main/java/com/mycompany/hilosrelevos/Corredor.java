@@ -10,14 +10,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Clase que maneja la informacion y el movimiento de los atletas especificos.
+ * 
  * @author Valeria Castañeda
  */
 public class Corredor extends Thread {
 
     Equipo equipo;
-    private int posicion;
-    private int fin;
+    private int paso;
+    private int pasoFin;
     private String equipoUno;
     private String equipoDos;
     private String equipoTres;
@@ -25,25 +25,25 @@ public class Corredor extends Thread {
     /**
      * Constuctor de la clase 
      * @param equipo
-     * @param posicion
-     * @param fin 
+     * @param paso
+     * @param pasoFin 
      */
-    public Corredor(Equipo equipo, int posicion, int fin) {
+    public Corredor(Equipo equipo, int paso, int pasoFin) {
         this.equipo = equipo;
-        this.posicion = posicion;
-        this.fin = fin;
+        this.paso = paso;
+        this.pasoFin = pasoFin;
     }
 
     @Override
     public void run() {
-        if (posicion == 0) {
+        if (paso == 0) {
             while (true) {
                 int pasoActual = avanzar(1);
                 if (pasoActual >= 33) {
                     equipo.setPosicionA(33);
                     synchronized (equipo) {
                         equipo.notifyAll();
-                        posicion = 33;
+                        paso = 33;
                     }
                     break;
                 }
@@ -58,7 +58,7 @@ public class Corredor extends Thread {
             }
 
         }
-        if (posicion == 33) {
+        if (paso == 33) {
             while (true) {
                 int pasoActual = avanzar(2);
                 if (pasoActual >= 66) {
@@ -79,7 +79,7 @@ public class Corredor extends Thread {
             }
 
         }
-        if (posicion == 66) {
+        if (paso == 66) {
             while (true) {
                 int pasoActual = avanzar(3);
                 if (pasoActual >= 100) {
