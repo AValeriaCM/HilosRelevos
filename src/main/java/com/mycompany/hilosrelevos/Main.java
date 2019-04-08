@@ -12,6 +12,9 @@ package com.mycompany.hilosrelevos;
 public class Main {
     
     public static void main(String[] args) {
+        /**
+         * Instancia de la clase principal
+         */
         Principal p = new Principal();
         p.iniciar();
     }

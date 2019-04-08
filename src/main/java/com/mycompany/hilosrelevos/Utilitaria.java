@@ -12,6 +12,12 @@ import java.util.Random;
  * @author Valeria Castañeda
  */
 public class Utilitaria {
+    
+    /**
+     * Metodo que retorna numeros aleatorios
+     * @return 
+     */
+    
     public static int random(){
         double i=Math.random()*100;
         int j=(int) i;

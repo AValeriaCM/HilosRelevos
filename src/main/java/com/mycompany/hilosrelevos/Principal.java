@@ -10,7 +10,11 @@ package com.mycompany.hilosrelevos;
  * @author Valeria Castañeda
  */
 public class Principal {
-
+    
+    /**
+     * Instancia de las clases para iniciar carrera
+     */
+    
     Equipo equipo1 = new Equipo("1", 0, 100);
     Equipo equipo2 = new Equipo("2", 0, 100);
     Equipo equipo3 = new Equipo("3", 0, 100);
@@ -24,23 +28,19 @@ public class Principal {
     Corredor atleta8 = new Corredor(equipo2, 66, 100);
     Corredor atleta9 = new Corredor(equipo3, 66, 100);
     
+    /**
+     * metodo que inicializa hilos
+     */
+    
     public void iniciar(){
         atleta1.start ();
-
         atleta2.start ();
-
         atleta3.start ();
-
         atleta4.start ();
-
         atleta5.start ();
-
         atleta6.start ();
-
         atleta7.start ();
-
         atleta8.start ();
-
         atleta9.start ();
     }
 }

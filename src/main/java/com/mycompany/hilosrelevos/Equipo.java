@@ -61,51 +61,87 @@ public class Equipo extends Thread {
         return trayecto;
         
     }
-    
+    /**
+     * Metodo que retorna
+     * @return 
+     */
     public String getNombre() {
         return nombre;
     }
-    
+    /**
+     * Metodo que recibe
+     * @param nombre 
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+    /**
+     * Metodo que retorna
+     * @return 
+     */
     public int getInicio() {
         return inicio;
     }
-    
+    /**
+     * Metodo que recibe
+     * @param inicio 
+     */
     public void setInicio(int inicio) {
         this.inicio = inicio;
     }
-    
+    /**
+     * Metodo que retorna
+     * @return 
+     */
     public int getFin() {
         return fin;
     }
-    
+    /**
+     * Metodo que recibe
+     * @param fin 
+     */
     public void setFin(int fin) {
         this.fin = fin;
     }
-    
+    /**
+     * Metodo que retorna
+     * @return 
+     */
     public int getPosicionA() {
         return posicionA;
     }
-    
+    /**
+     * Metodo que recibe
+     * @param posicionA 
+     */
     public void setPosicionA(int posicionA) {
         this.posicionA = posicionA;
     }
-    
+    /**
+     * Metodo que retorna
+     * @return 
+     */
     public int getPosicionB() {
         return posicionB;
     }
-    
+    /**
+     * Metodo que recibe
+     * @param posicionB 
+     */
     public void setPosicionB(int posicionB) {
         this.posicionB = posicionB;
     }
-    
+    /**
+     * Metodo que retorna
+     * @return 
+     */
     public int getPosicionC() {
         return posicionC;
     }
-   
+   /**
+    * Metodo que recibe
+    * @param posicionC 
+    */
     public void setPosicionC(int posicionC) {
         this.posicionC = posicionC;
     }
