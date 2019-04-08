@@ -33,12 +33,17 @@ public class Corredor extends Thread {
         this.paso = paso;
         this.pasoFin = pasoFin;
     }
-
+    
+    /**
+     * Metodo heredado de la clase Thread donde se realizaran validaciones con
+     * variables sincronizadas
+     */
+    
     @Override
     public void run() {
         if (paso == 0) {
             while (true) {
-                int pasoActual = avanzar(1);
+                int pasoActual = posicionPasos(1);
                 if (pasoActual >= 33) {
                     equipo.setPosicionA(33);
                     synchronized (equipo) {
@@ -60,7 +65,7 @@ public class Corredor extends Thread {
         }
         if (paso == 33) {
             while (true) {
-                int pasoActual = avanzar(2);
+                int pasoActual = posicionPasos(2);
                 if (pasoActual >= 66) {
                     equipo.setPosicionB(66);
                     synchronized (equipo) {
@@ -81,7 +86,7 @@ public class Corredor extends Thread {
         }
         if (paso == 66) {
             while (true) {
-                int pasoActual = avanzar(3);
+                int pasoActual = posicionPasos(3);
                 if (pasoActual >= 100) {
                     equipo.setPosicionC(100);
                     System.out.println("Equipo ganador "+ equipo.getNombre());
@@ -110,15 +115,19 @@ public class Corredor extends Thread {
         }
         
     }
-
-    public int avanzar(int numeroAtleta) {
+    /**
+     * Metodo que suma pasos al trayecto del corredor
+     * @param numPosi
+     * @return 
+     */
+    public int posicionPasos(int numPosi) {
         try {
             Thread.sleep(500);            
         } catch (InterruptedException ex) {
             Logger.getLogger(Corredor.class.getName()).log(Level.SEVERE, null, ex);
         }
         int valorAvance = Utilitaria.random();
-        if (numeroAtleta == 1) {
+        if (numPosi == 1) {
             equipo.setPosicionA(equipo.getPosicionA() + valorAvance);
             if(equipo.imprimir().contains("1")){
                 equipoUno=equipo.imprimir();
@@ -138,7 +147,7 @@ public class Corredor extends Thread {
             }            
             return equipo.getPosicionA();
         }
-        if (numeroAtleta == 2) {
+        if (numPosi == 2) {
             equipo.setPosicionB(equipo.getPosicionB() + valorAvance);
             if(equipo.imprimir().contains("1")){
                 equipoUno=equipo.imprimir();
@@ -158,7 +167,7 @@ public class Corredor extends Thread {
             }
             return equipo.getPosicionB();
         }
-        if (numeroAtleta == 3) {
+        if (numPosi == 3) {
             equipo.setPosicionC(equipo.getPosicionC() + valorAvance);
             if(equipo.imprimir().contains("1")){
                 equipoUno=equipo.imprimir();

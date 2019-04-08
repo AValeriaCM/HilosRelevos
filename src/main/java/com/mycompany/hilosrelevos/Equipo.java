@@ -7,11 +7,13 @@ package com.mycompany.hilosrelevos;
 
 /**
  *
- * @author THATA
+ * @author Valeria Castañeda
  */
 public class Equipo extends Thread {
     
-   
+   /**
+    * Declaracion de variables
+    */
     private String nombre;
   
     private int inicio;
@@ -23,7 +25,12 @@ public class Equipo extends Thread {
     private int posicionB;
     
     private int posicionC;
-   
+   /**
+    * Constructor de la clase
+    * @param nombre
+    * @param inicio
+    * @param fin 
+    */
     public Equipo(String nombre, int inicio, int fin) {
         this.nombre = nombre;
         this.inicio = inicio;
@@ -32,16 +39,20 @@ public class Equipo extends Thread {
         this.posicionB = 33;
         this.posicionC = 66;
     }
-    
+    /**
+     * metodo sincronizado que imprime posiciones de los 
+     * corredores
+     * @return 
+     */
     public synchronized String imprimir() {
         String trayecto = "Equipo: "+nombre+" ";
         for (int i = inicio; i <= fin; i++) {
             if (i == posicionA) {
-                trayecto += "P1";
+                trayecto += "01";
             } else if (i == posicionB) {
-                trayecto += "P2";
+                trayecto += "02";
             } else if (i == posicionC) {
-                trayecto += "P3";
+                trayecto += "03";
             } else {
                 trayecto += "_";
             }
